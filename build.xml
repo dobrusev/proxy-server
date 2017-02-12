@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build helper" default="compile-proxy">
+
+	<target name="compile-proxy">
+		<sequential>
+			<prepare/>
+			<yhaxen dir="" args="compile -logLevel 0"/>
+		</sequential>
+	</target>
+
+	<macrodef name="prepare">
+		<sequential>
+			<delete dir="bin"/>
+			<mkdir dir="bin"/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="yhaxen">
+		<attribute name="args"/>
+		<attribute name="dir" default=""/>
+		<sequential>
+			<exec executable="haxelib" dir="@{dir}" failonerror="true">
+				<arg line="run yhaxen @{args}"/>
+			</exec>
+		</sequential>
+	</macrodef>
+</project>

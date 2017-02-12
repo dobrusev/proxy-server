@@ -1,0 +1,25 @@
+{
+  	"dependencies":
+  	[
+	  {
+		"name": "hxnodejs",
+		"version": "4.0.9",
+		"source": "git@github.com:HaxeFoundation/hxnodejs.git",
+		"type": "git",
+		"subdirectory": "src"
+	  }
+	],
+	"builds":
+	[
+		{
+			"name": "compile-proxy",
+			"command": "haxe",
+			"arguments": ["-main", "ProxyServer", "${dependency:*:classPath:-cp}", "-cp", "../../src", "-cp", "src", "-js", "bin/ProxyServer.js", "-debug"]
+		},
+	  	{
+			"name": "run-proxy",
+		  	"command": "node",
+		  	"arguments": ["bin/ProxyServer.js"]
+		}
+	]
+}

@@ -1,0 +1,19 @@
+# IntelliJ module
+*.iml
+/.idea
+
+# Sublime project files
+*.sublime-*
+
+# project
+/bin
+
+# mac
+.DS_Store
+user.cache
+
+# npm
+/node_modules
+
+#demo
+/demo/shaka-test/bin
